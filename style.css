@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #ACC8A2, #1A2517);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.container{
+    border: 1px solid black;
+    width: 50%;
+    border-radius: 20px;
+    padding: 20px 30px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.664);
+    /* background-color: ; */
+}
+.main-heading{
+    font-size: 40px;
+    margin: 20px 0;
+}
+.input-container{
+    display:flex;
+    width: 100%;
+    background:white;
+    margin: 10px 0;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+.userinput{
+    flex:1;
+    padding:15px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+.search{
+    padding:0 25px;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    background: linear-gradient(135deg  , #ACC8A2, #1A2517);
+    transition:0.3s;
+}
+.save{
+    padding:0 32px;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    background: linear-gradient(135deg  , #ACC8A2, #1A2517);
+    transition:0.3s;
+}
+.save:hover{
+    opacity: 0.9;
+}
+.search:hover{
+    opacity: 0.9;
+}
+.lists{
+    margin: 20px 0;
+}
+
+.list{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.712);
+    transition: all;
+    transition-duration: 0.8s;
+}
+.list:hover{
+    transform: scale(1.05);
+}
+.fa-trash{
+    color: rgba(255, 0, 0, 0.87);
+    cursor: pointer;
+}
+.edit{
+    color: rgba(255, 68, 0, 0.623);
+    cursor: pointer;
+}
+.check{
+    color: rgb(28, 255, 8);
+    cursor: pointer;
+}

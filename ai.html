@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Input</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f2f2f2;
+}
+
+.container{
+    display:flex;
+    width:450px;
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.container input{
+    flex:1;
+    padding:15px;
+    border:none;
+    outline:none;
+    font-size:16px;
+}
+
+.container button{
+    padding:0 25px;
+    border:none;
+    cursor:pointer;
+    color:white;
+    font-size:16px;
+    background:linear-gradient(135deg,#00c6ff,#a100ff);
+    transition:0.3s;
+}
+
+.container button:hover{
+    opacity:0.8;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <input type="text" placeholder="Masukan to do list">
+    <button>Save</button>
+</div>
+
+</body>
+</html>
