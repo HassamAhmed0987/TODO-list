@@ -1,6 +1,13 @@
 const userInput = document.getElementById("saveinput")
 const saveBtn = document.getElementById("save")
 const ulList = document.querySelector(".lists")
+let editLi = 0;
+
+let date = new Date();
+
+console.log(date.toLocaleDateString());
+console.log(date.toLocaleTimeString());
+
 
 
 saveBtn.addEventListener("click", save)
@@ -17,9 +24,31 @@ function save() {
 
     list.classList = "list"
 
-    ulList.appendChild(list)
+    ulList.prepend(list)
 
     userInput.value = "";
+
+    let container = document.createElement("div")
+
+    list.appendChild(container)
+
+
+    let time = document.createElement("p")
+    
+    time.innerText = date.toLocaleDateString()
+    
+    container.appendChild(time)
+    
+    let time2 = document.createElement("p")
+
+    time2.innerText = date.toLocaleTimeString()
+
+
+    container.appendChild(time2)
+    
+
+
+    // let time = date.toLocaleDateString()
 
     let icons = document.createElement("div")
 
@@ -46,5 +75,28 @@ function save() {
         list.style.textDecoration = "line-through"
     })
 
-    // console.log(list);    
+    let edit = document.createElement("i")
+
+    edit.classList = "fa-regular fa-pen-to-square edit"
+
+    icons.appendChild(edit);
+    // console.log(edit);
+    
+    edit.addEventListener("click", function () {
+        editLi = edit.parentElement.parentElement
+        userInput.value = editLi.textContent
+        saveBtn.innerText = "Update"
+
+        editLi.remove()
+    })
+    
+    
+    saveBtn.innerText = "Save"
+    
 }
+
+
+
+
+
+// console.log(editLi);
