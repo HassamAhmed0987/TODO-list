@@ -1,12 +1,13 @@
 const userInput = document.getElementById("saveinput")
 const saveBtn = document.getElementById("save")
 const ulList = document.querySelector(".lists")
-let editLi = 0;
+const list1 = document.getElementById("list1")
+let editLi = null;
 
-let date = new Date();
+// let date = new Date();
 
-console.log(date.toLocaleDateString());
-console.log(date.toLocaleTimeString());
+// console.log(date.toLocaleDateString());
+// console.log(date.toLocaleTimeString());
 
 
 
@@ -14,10 +15,19 @@ saveBtn.addEventListener("click", save)
 
 function save() {
 
-    if(userInput.value === ""){
-       return alert("Enter a valid value")
+    // ================================================
+    //     Empty input
+    // ================================================
+    if (userInput.value === "") {
+        return alert("Enter a valid value")
     }
-
+    // ================================================
+    //     Example list
+    // ================================================
+    list1.style.display = "none"
+    // ================================================
+    //     user list
+    // ================================================
 
     let list = document.createElement("li")
     list.textContent = userInput.value
@@ -26,31 +36,42 @@ function save() {
 
     ulList.prepend(list)
 
+    // ================================================
+    //     Input Empty
+    // ================================================
+
     userInput.value = "";
 
-    let container = document.createElement("div")
 
-    list.appendChild(container)
+    // let container = document.createElement("div")
+    // list.appendChild(container)
+    // let time = document.createElement("p")
+    // time.innerText = date.toLocaleDateString()
+    // container.appendChild(time)
+    // let time2 = document.createElement("p")
+    // time2.innerText = date.toLocaleTimeString()
+    // container.appendChild(time2)
+    // let time = document.createElement("p")
+    // let time2 = document.createElement("p")
 
+    // setInterval(() => {
+    //     time.innerText = date.toLocaleDateString()
+    //     container.appendChild(time)
+    //     time2.innerText = date.toLocaleTimeString()
+    //     container.appendChild(time2)
+    // }, 1000);
 
-    let time = document.createElement("p")
-    
-    time.innerText = date.toLocaleDateString()
-    
-    container.appendChild(time)
-    
-    let time2 = document.createElement("p")
-
-    time2.innerText = date.toLocaleTimeString()
-
-
-    container.appendChild(time2)
-    
 
 
     // let time = date.toLocaleDateString()
 
+    // ================================================
+    //     creating icons
+    // ================================================
+
     let icons = document.createElement("div")
+
+    icons.classList = "icons"
 
     list.append(icons)
 
@@ -59,8 +80,10 @@ function save() {
     deleteIcon.classList = "fa-solid fa-trash"
 
     icons.appendChild(deleteIcon)
-
-    deleteIcon.addEventListener("click" ,function () {
+    // ================================================
+    //     Delete function
+    // ================================================
+    deleteIcon.addEventListener("click", function () {
         list.remove()
     })
 
@@ -70,8 +93,10 @@ function save() {
 
     icons.appendChild(complete)
 
-
-    complete.addEventListener("click" , function () {
+    // ================================================
+    //  Completed function
+    // ================================================
+    complete.addEventListener("click", function () {
         list.style.textDecoration = "line-through"
     })
 
@@ -81,7 +106,9 @@ function save() {
 
     icons.appendChild(edit);
     // console.log(edit);
-    
+    // ================================================
+    //     Edit funtion
+    // ================================================
     edit.addEventListener("click", function () {
         editLi = edit.parentElement.parentElement
         userInput.value = editLi.textContent
@@ -89,10 +116,10 @@ function save() {
 
         editLi.remove()
     })
-    
-    
+
+
     saveBtn.innerText = "Save"
-    
+
 }
 
 
