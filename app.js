@@ -2,6 +2,7 @@ const userInput = document.getElementById("saveinput")
 const saveBtn = document.getElementById("save")
 const ulList = document.querySelector(".lists")
 const list1 = document.getElementById("list1")
+const form = document.querySelector("form")
 let editLi = null;
 
 // let date = new Date();
@@ -10,7 +11,11 @@ let editLi = null;
 // console.log(date.toLocaleTimeString());
 
 
+form.addEventListener("submit", function (e) {
+   e.preventDefault()
 
+   save()
+})
 saveBtn.addEventListener("click", save)
 
 function save() {
