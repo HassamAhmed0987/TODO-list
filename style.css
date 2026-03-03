@@ -123,10 +123,22 @@ form{
 }
 
 
-@media (max-width: 300px) {
+@media (max-width: 500px) {
     .container {
         border: 1px solid black;
         width: 100%;
+        border-radius: 20px;
+        padding: 20px 30px;
+        text-align: center;
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.664);
+        /* background-color: ; */
+    }
+
+}
+ @media (min-width: 500px) {
+    .container {
+        border: 1px solid black;
+        width: 50%;
         border-radius: 20px;
         padding: 20px 30px;
         text-align: center;
